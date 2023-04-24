@@ -1,0 +1,27 @@
+[character]
+error_symbol = "[❯](bold red)"
+success_symbol = "[❯](bold green)"
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+[elixir]
+symbol = ' '
+
+[git_branch]
+symbol = ' '
+truncation_length = 20
+
+[git_status]
+conflicted = '󰞇 '
+ahead = '⇡${count} '
+behind = '⇣${count} '
+diverged = '⇕ ⇡${ahead_count} ⇣${behind_count} '
+untracked = '?${count} '
+stashed = '*${count} '
+modified = '!${count} '
+staged = '+${count} '
+renamed = '»${count} '
+deleted = '✘${count} '
+style = 'bold yellow'
+format = '([$all_status$ahead_behind]($style) )'

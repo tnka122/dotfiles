@@ -1,3 +1,6 @@
+# zsh-abbr is set up based on $DOTDIR/user-abbreviations.
+# If you want to remove abbr settings, modify the user-abbreviations file too.
+
 # bat
 abbr b='bat'
 # cd

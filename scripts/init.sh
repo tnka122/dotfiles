@@ -12,9 +12,8 @@ if [ "$(uname)" == 'Darwin' ]; then
   echo "[info] install xcode"
   xcode-select --install > /dev/null
   # brew
-  echo "[info] install brew"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  "$dotfiles_dir"/scripts/update_brew.sh
+  "$dotfiles_dir"/brew/install.sh
+  "$dotfiles_dir"/brew/setup.sh
   # defaults
   "$dotfiles_dir"/scripts/mac/defaults.sh
 
@@ -33,9 +32,8 @@ elif [ "$(uname)" == 'Linux' ]; then
   sudo apt -yV autoremove
   sudo apt autoclean
   # brew
-  echo "[info] install brew"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  "$dotfiles_dir"/scripts/update_brew.sh
+  "$dotfiles_dir"/brew/install.sh
+  "$dotfiles_dir"/brew/setup.sh
 
   # WSL 用の調整
   if [[ "$(uname -r)" == *microsoft* ]]; then

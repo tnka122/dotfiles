@@ -15,6 +15,8 @@ if [ "$(uname)" == 'Darwin' ]; then
   echo "[info] install brew"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   "$dotfiles_dir"/scripts/update_brew.sh
+  # defaults
+  "$dotfiles_dir"/scripts/mac/defaults.sh
 
 #
 # Linux

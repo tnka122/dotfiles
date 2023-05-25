@@ -16,6 +16,8 @@ if [ "$(uname)" == 'Darwin' ]; then
   "$dotfiles_dir"/brew/setup.sh
   # defaults
   "$dotfiles_dir"/scripts/mac/defaults.sh
+  # rust
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #
 # Linux
@@ -34,6 +36,8 @@ elif [ "$(uname)" == 'Linux' ]; then
   # brew
   "$dotfiles_dir"/brew/install.sh
   "$dotfiles_dir"/brew/setup.sh
+  # rust
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
   # WSL 用の調整
   if [[ "$(uname -r)" == *microsoft* ]]; then

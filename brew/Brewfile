@@ -1,0 +1,18 @@
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+tap "jdxcode/tap"
+
+brew "bat"
+brew "exa"
+brew "ffmpeg"
+brew "fzf"
+brew "git"
+brew "jq"
+brew "neovim"
+brew "sheldon"
+brew "starship"
+brew "tmux"
+brew "jdxcode/tap/rtx"
+
+cask "iterm2"
+cask "raycast"

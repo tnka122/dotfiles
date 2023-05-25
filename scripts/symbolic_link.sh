@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 cd "$SCRIPT_DIR" && cd .. || exit

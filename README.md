@@ -1,3 +1,6 @@
+![macOS](https://github.com/tnka122/dotfiles/actions/workflows/macos.yml/badge.svg)
+![linuxOS](https://github.com/tnka122/dotfiles/actions/workflows/linux.yml/badge.svg)
+
 # dotfiles
 
 My personal configuration files for zsh, sheldon, starship, neovim, and more.

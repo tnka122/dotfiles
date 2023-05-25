@@ -2,7 +2,7 @@ MAKEFILE_DIR_SLASH := $(dir $(abspath $(firstword $(MAKEFILE_LIST))))
 MAKEFILE_DIR := $(patsubst %/,%,$(MAKEFILE_DIR_SLASH))
 
 .PHONY: all
-all: pre init symbolic_link 
+all: pre init symbolic_link
 
 .PHONY: pre
 pre:

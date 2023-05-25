@@ -1,0 +1,17 @@
+name: macOS
+
+on:
+  push:
+    paths:
+      - '**'
+      - '!README.md'
+      - '!.gitignore'
+      - 'starship/starship.toml'
+
+jobs:
+  MacOS-Test:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: make all

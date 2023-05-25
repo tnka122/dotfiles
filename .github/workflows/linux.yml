@@ -1,0 +1,17 @@
+name: linuxOS
+
+on:
+  push:
+    paths:
+      - '**'
+      - '!README.md'
+      - '!.gitignore'
+      - 'starship/starship.toml'
+
+jobs:
+  Linux-Test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: make all

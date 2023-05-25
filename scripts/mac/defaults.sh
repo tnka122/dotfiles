@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 
 if [ "$(uname)" != "Darwin" ]; then
 	exit 0

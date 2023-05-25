@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 
 dotfiles_dir=$(cd "$(dirname "$0")" && cd .. || exit 0; pwd)
 

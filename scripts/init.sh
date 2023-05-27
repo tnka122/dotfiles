@@ -8,9 +8,14 @@ dotfiles_dir=$(cd "$(dirname "$0")" && cd .. || exit 0; pwd)
 
 if [ "$(uname)" == 'Darwin' ]; then
   echo "[info] MacOS"
-  # Install xcode
-  echo "[info] install xcode"
-  xcode-select --install > /dev/null
+  # Install Command line tools
+  if ! xcode-select --print-path &> /dev/null; then
+    echo "[info] Command line tools not found. Installing..."
+    xcode-select --install > /dev/null
+    echo "[info] Installed"
+  else
+    echo "[info] Command line tools already installed"
+  fi
   # brew
   "$dotfiles_dir"/brew/install.sh
   "$dotfiles_dir"/brew/setup.sh
@@ -26,7 +31,7 @@ if [ "$(uname)" == 'Darwin' ]; then
 elif [ "$(uname)" == 'Linux' ]; then
   echo "[info] Linux"
   # apt
-  echo "[info] install apt-related"
+  echo "[info] Update apt..."
   sudo apt -y update
   sudo apt install build-essential procps curl file git
   sudo apt -yV upgrade
@@ -49,6 +54,6 @@ elif [ "$(uname)" == 'Linux' ]; then
 #
 
 else
-  echo "[error] Windows is not supported!" 1>&2
+  echo "[error] Windows not supported!" 1>&2
   exit 1
 fi

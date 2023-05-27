@@ -2,7 +2,7 @@
 
 dotfiles_dir=$(cd "$(dirname "$0")" && cd .. || exit 0; pwd)
 
-if builtin command -v brew > /dev/null 2>&1; then
+if builtin command -v brew &> /dev/null; then
   echo "[info] run brew doctor"
   brew doctor
   echo "[info] run brew update"
@@ -14,6 +14,6 @@ if builtin command -v brew > /dev/null 2>&1; then
   echo "[info] run brew upgrade"
   brew cleanup --verbose
 else
-  echo "[error] brew command is not found!" 1>&2
+  echo "[error] Brew not found!" 1>&2
   exit 1
 fi

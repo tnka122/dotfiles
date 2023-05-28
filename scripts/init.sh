@@ -41,7 +41,7 @@ elif [ "$(uname)" == 'Linux' ]; then
   sudo apt -yV autoremove
   sudo apt autoclean
   # zsh
-  chsh -s "$(builtin command -v zsh)"
+  sudo chsh "$USER" -s "$(builtin command -v zsh)"
   # brew
   "$dotfiles_dir"/brew/install.sh
   "$dotfiles_dir"/brew/setup.sh

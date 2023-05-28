@@ -3,15 +3,16 @@ name: macOS
 on:
   push:
     paths:
-      - '**'
-      - '!README.md'
-      - '!.gitignore'
-      - 'starship/starship.toml'
+      - 'Makefile'
+      - 'scripts/*'
+      - 'brew/*'
 
 jobs:
-  MacOS-Test:
+  MacOS-Setup:
     runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v3
       - run: make all
+      - name: Check commands
+        run: zsh .github/scripts/check-commands.sh

@@ -3,15 +3,16 @@ name: linuxOS
 on:
   push:
     paths:
-      - '**'
-      - '!README.md'
-      - '!.gitignore'
-      - 'starship/starship.toml'
+      - 'Makefile'
+      - 'scripts/*'
+      - 'brew/*'
 
 jobs:
-  Linux-Test:
+  Linux-Setup:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
       - run: make all
+      - name: Check commands
+        run: zsh .github/scripts/check-commands.sh

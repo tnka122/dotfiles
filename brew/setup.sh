@@ -5,8 +5,6 @@ set -eux
 dotfiles_dir=$(cd "$(dirname "$0")" && cd .. || exit 0; pwd)
 
 if builtin command -v brew &> /dev/null; then
-  echo "[info] run brew doctor"
-  brew doctor
   echo "[info] run brew update"
   brew update --verbose
   echo "[info] run brew upgrade"
@@ -15,6 +13,8 @@ if builtin command -v brew &> /dev/null; then
   brew bundle --file "$dotfiles_dir"/brew/Brewfile --verbose
   echo "[info] run brew upgrade"
   brew cleanup --verbose
+  echo "[info] run brew doctor"
+  brew doctor
 else
   echo "[error] Brew not found!" 1>&2
   exit 1

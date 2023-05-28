@@ -35,11 +35,13 @@ elif [ "$(uname)" == 'Linux' ]; then
   # apt
   echo "[info] Update apt..."
   sudo apt -y update
-  sudo apt install build-essential procps curl file git
+  sudo apt install zsh build-essential procps curl file git
   sudo apt -yV upgrade
   sudo apt -yV dist-upgrade
   sudo apt -yV autoremove
   sudo apt autoclean
+  # zsh
+  chsh -s "$(builtin command -v zsh)"
   # brew
   "$dotfiles_dir"/brew/install.sh
   "$dotfiles_dir"/brew/setup.sh

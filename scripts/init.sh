@@ -36,7 +36,7 @@ elif [ "$(uname)" == 'Linux' ]; then
   # apt
   echo "[info] Update apt..."
   sudo apt -y update
-  sudo apt install zsh build-essential procps curl file git
+  sudo apt install zsh build-essential procps
   sudo apt -yV upgrade
   sudo apt -yV dist-upgrade
   sudo apt -yV autoremove

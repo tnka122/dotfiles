@@ -13,6 +13,7 @@ if builtin command -v brew &> /dev/null; then
   brew bundle --file "$dotfiles_dir"/brew/Brewfile --verbose
   echo "[info] run brew upgrade"
   brew cleanup --verbose
+  if [ -d /usr/local/include/node ]; then sudo rm -R /usr/local/include/node; fi
   echo "[info] run brew doctor"
   brew doctor
 else

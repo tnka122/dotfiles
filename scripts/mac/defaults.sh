@@ -51,7 +51,9 @@ killall Finder
 # VSCode
 #
 
-# for nvim
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+if builtin command -v code; then
+	# for nvim
+	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
-killall VSCode
+	killall VSCode
+fi

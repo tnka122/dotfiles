@@ -1,4 +1,4 @@
-name: linuxOS
+name: Setup CI
 
 on:
   push:
@@ -8,8 +8,12 @@ on:
       - 'brew/*'
 
 jobs:
-  Linux-Setup:
-    runs-on: ubuntu-latest
+  Setup:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
 
     steps:
       - uses: actions/checkout@v3

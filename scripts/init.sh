@@ -1,4 +1,6 @@
-#!/bin/bash -eu
+#!/bin/bash
+
+set -eux
 
 dotfiles_dir=$(cd "$(dirname "$0")" && cd .. || exit 0; pwd)
 

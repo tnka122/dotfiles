@@ -20,6 +20,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   fi
   # brew
   "$dotfiles_dir"/brew/install.sh
+  eval "$(/opt/homebrew/bin/brew shellenv)"
   "$dotfiles_dir"/brew/setup.sh
   # defaults
   "$dotfiles_dir"/scripts/mac/defaults.sh
@@ -44,6 +45,7 @@ elif [ "$(uname)" == 'Linux' ]; then
   sudo chsh "$USER" -s "$(builtin command -v zsh)"
   # brew
   "$dotfiles_dir"/brew/install.sh
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   "$dotfiles_dir"/brew/setup.sh
   # rust
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh

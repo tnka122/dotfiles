@@ -1,5 +1,4 @@
-![macOS](https://github.com/tnka122/dotfiles/actions/workflows/macos.yml/badge.svg)
-![linuxOS](https://github.com/tnka122/dotfiles/actions/workflows/linux.yml/badge.svg)
+[![Setup CI](https://github.com/tnka122/dotfiles/actions/workflows/setup.yml/badge.svg)](https://github.com/tnka122/dotfiles/actions/workflows/setup.yml)
 
 # dotfiles
 

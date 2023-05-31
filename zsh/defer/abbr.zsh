@@ -1,5 +1,9 @@
-# zsh-abbr is set up based on $DOTDIR/user-abbreviations.
-# If you want to remove abbr settings, modify the user-abbreviations file too.
+# zsh-abbr is set up based on $ABBR_USER_ABBREVIATIONS_FILE.
+# If you want to update abbr settings, remove the user-abbreviations file or run `abbr-update`.
+
+abbr-update() {
+  rm $ABBR_USER_ABBREVIATIONS_FILE && exec zsh
+}
 
 # bat
 abbr b='bat'
@@ -25,10 +29,10 @@ abbr gs='git status -sb'
 abbr gsw='git switch'
 abbr gswc='git switch -c'
 # ls
-abbr l='exa -F'
-abbr ll='exa -Fl'
-abbr la='exa -Fa'
-abbr lla='exa -Fla'
+abbr l='exa -F --icons'
+abbr ll='exa -Fl --icons'
+abbr la='exa -Fa --icons'
+abbr lla='exa -Fla --icons'
 # python
 abbr vact='source ./.venv/bin/activate'
 # vim

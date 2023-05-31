@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eux
+set -Ceu
 
 # mac
 if [ "$(uname)" == 'Darwin' ]; then
@@ -23,7 +23,7 @@ fi
 
 if ! builtin command -v brew &> /dev/null; then
   echo "[info] Brew not found. Installing..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  yes | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo "$brew_path" >> "$HOME"/.zprofile
   echo "[info] Installed"
 else

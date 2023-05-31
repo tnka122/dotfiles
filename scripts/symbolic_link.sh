@@ -1,22 +1,25 @@
 #!/bin/bash
 
-set -eux
+set -eux -o pipefail
 
-SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
-cd "$SCRIPT_DIR" && cd .. || exit
+dotfiles_dir=$(cd "$(dirname "$0")" && cd .. || exit 0; pwd)
 
 # zsh
-ln -sf "$PWD"/.zshenv "$HOME"/.zshenv
+if [ -f "$HOME"/.zshenv ]; then
+  mv "$HOME"/.zshenv "$HOME"/.zshenv.org
+  echo "[info] ~/.zshenv was overwritten. Original ~/.zshenv is copied to ~/.zshenv.org"
+fi
+ln -sf "$dotfiles_dir"/.zshenv "$HOME"/.zshenv
 if [ ! -d "$HOME"/.zsh ]; then mkdir "$HOME"/.zsh; fi
-ln -sf "$PWD"/zsh/.zshenv "$HOME"/.zsh/.zshenv
-ln -sf "$PWD"/zsh/.zshrc "$HOME"/.zsh/.zshrc
-ln -sf "$PWD"/zsh/.zprofile "$HOME"/.zsh/.zprofile
+ln -sf "$dotfiles_dir"/zsh/.zshenv "$HOME"/.zsh/.zshenv
+ln -sf "$dotfiles_dir"/zsh/.zshrc "$HOME"/.zsh/.zshrc
+ln -sf "$dotfiles_dir"/zsh/.zprofile "$HOME"/.zsh/.zprofile
 # sheldon
 if [ ! -d "$HOME"/.config/sheldon ]; then mkdir -p "$HOME"/.config/sheldon; fi
-ln -sf "$PWD"/sheldon/plugins.toml "$HOME"/.config/sheldon/plugins.toml
+ln -sf "$dotfiles_dir"/sheldon/plugins.toml "$HOME"/.config/sheldon/plugins.toml
 # starship
 if [ ! -d "$HOME"/.config ]; then mkdir "$HOME"/.config; fi
-ln -sf "$PWD"/starship/starship.toml "$HOME"/.config/starship.toml
+ln -sf "$dotfiles_dir"/starship/starship.toml "$HOME"/.config/starship.toml
 # nvim
 if [ ! -d "$HOME"/.config/nvim ]; then mkdir -p "$HOME"/.config/nvim; fi
-ln -sf "$PWD"/nvim/init.vim "$HOME"/.config/nvim/init.vim
+ln -sf "$dotfiles_dir"/nvim/init.vim "$HOME"/.config/nvim/init.vim

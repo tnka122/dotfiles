@@ -6,6 +6,7 @@ on:
       - 'Makefile'
       - 'scripts/*'
       - 'brew/*'
+      - '.github/*'
 
 jobs:
   Setup:
@@ -17,6 +18,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: cp -r "$GITHUB_WORKSPACE" "$HOME"/dotfiles
       - run: make all
       - name: Check commands
-        run: zsh .github/scripts/check-commands.sh
+        shell: /bin/zsh {0}
+        run: .github/scripts/check-commands.sh

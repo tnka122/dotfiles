@@ -1,4 +1,6 @@
-#!/bin/bash -eu
+#!/bin/bash
+
+set -eux
 
 if [ "$(uname)" != "Darwin" ]; then
 	exit 0
@@ -49,7 +51,9 @@ killall Finder
 # VSCode
 #
 
-# for nvim
-defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+if builtin command -v code; then
+	# for nvim
+	defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
-killall VSCode
+	killall VSCode
+fi

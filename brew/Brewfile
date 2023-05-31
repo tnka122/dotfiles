@@ -4,7 +4,6 @@ tap "jdxcode/tap"
 
 brew "bat"
 brew "exa"
-brew "ffmpeg"
 brew "fzf"
 brew "git"
 brew "jq"

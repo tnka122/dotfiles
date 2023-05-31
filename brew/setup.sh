@@ -1,10 +1,10 @@
-#!/bin/bash -eu
+#!/bin/bash
+
+set -Ceu
 
 dotfiles_dir=$(cd "$(dirname "$0")" && cd .. || exit 0; pwd)
 
-if builtin command -v brew > /dev/null 2>&1; then
-  echo "[info] run brew doctor"
-  brew doctor
+if builtin command -v brew &> /dev/null; then
   echo "[info] run brew update"
   brew update --verbose
   echo "[info] run brew upgrade"
@@ -13,7 +13,10 @@ if builtin command -v brew > /dev/null 2>&1; then
   brew bundle --file "$dotfiles_dir"/brew/Brewfile --verbose
   echo "[info] run brew upgrade"
   brew cleanup --verbose
+  if [ -d /usr/local/include/node ]; then sudo rm -R /usr/local/include/node; fi
+  echo "[info] run brew doctor"
+  brew doctor
 else
-  echo "[error] brew command is not found!" 1>&2
+  echo "[error] Brew not found!" 1>&2
   exit 1
 fi

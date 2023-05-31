@@ -1,0 +1,22 @@
+name: Setup CI
+
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  Setup:
+    if: ${{ github.event.label.name == 'ci-enabled' }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: cp -r "$GITHUB_WORKSPACE" "$HOME"/dotfiles
+      - run: make all
+      - name: Check commands
+        shell: /bin/zsh --login {0}
+        run: .github/scripts/check-commands.sh

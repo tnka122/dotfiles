@@ -1,15 +1,12 @@
 name: Setup CI
 
 on:
-  push:
-    paths:
-      - 'Makefile'
-      - 'scripts/*'
-      - 'brew/*'
-      - '.github/*'
+  pull_request:
+    types: [labeled]
 
 jobs:
   Setup:
+    if: ${{ github.event.label.name == 'ci-enabled' }}
     runs-on: ${{ matrix.os }}
 
     strategy:

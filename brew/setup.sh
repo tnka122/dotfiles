@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eux
+set -Ceu
 
 dotfiles_dir=$(cd "$(dirname "$0")" && cd .. || exit 0; pwd)
 

@@ -1,14 +1,12 @@
 #!/bin/bash
 
-set -eux
+set -Ceux -o pipefail
 
+which brew
 which bat
 which exa
-which ffmpeg
 which fzf
 which git
-which jq
 which nvim
 which sheldon
 which starship
-which tmux

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eux
+set -Ceux -o pipefail
 
 dotfiles_dir=$(cd "$(dirname "$0")" && cd .. || exit 0; pwd)
 
@@ -36,7 +36,7 @@ elif [ "$(uname)" == 'Linux' ]; then
   # apt
   echo "[info] Update apt..."
   sudo apt -y update
-  sudo apt install zsh build-essential procps
+  sudo apt -yV install zsh build-essential procps curl file git
   sudo apt -yV upgrade
   sudo apt -yV dist-upgrade
   sudo apt -yV autoremove

@@ -28,6 +28,9 @@ deleted = '✘${count} '
 style = 'bold yellow'
 format = '([$all_status$ahead_behind]($style) )'
 
+[package]
+disabled = true
+
 [time]
 disabled = false
 style = 'white'

@@ -29,10 +29,10 @@ abbr gs='git status -sb'
 abbr gsw='git switch'
 abbr gswc='git switch -c'
 # ls
-abbr l='exa -F --icons'
-abbr ll='exa -Fl --icons'
-abbr la='exa -Fa --icons'
-abbr lla='exa -Fla --icons'
+abbr l='eza -F --icons'
+abbr ll='eza -Fl --icons'
+abbr la='eza -Fa --icons'
+abbr lla='eza -Fla --icons'
 # python
 abbr vact='source ./.venv/bin/activate'
 # vim

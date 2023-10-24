@@ -4,7 +4,7 @@ set -Ceux -o pipefail
 
 which brew
 which bat
-which exa
+which eza
 which fzf
 which git
 which nvim

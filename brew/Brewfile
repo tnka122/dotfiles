@@ -3,7 +3,7 @@ tap "homebrew/cask-fonts"
 tap "jdxcode/tap"
 
 brew "bat"
-brew "exa"
+brew "eza"
 brew "fzf"
 brew "git"
 brew "jq"

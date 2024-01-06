@@ -1,17 +1,16 @@
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
-tap "jdxcode/tap"
 
 brew "bat"
 brew "eza"
 brew "fzf"
 brew "git"
 brew "jq"
+brew "mise"
 brew "neovim"
 brew "sheldon"
 brew "starship"
 brew "tmux"
-brew "jdxcode/tap/rtx"
 
 cask "iterm2"
 cask "raycast"

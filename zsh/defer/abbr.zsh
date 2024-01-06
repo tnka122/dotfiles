@@ -14,8 +14,8 @@ abbr ..='cd ..'
 abbr d='docker'
 abbr dcc='docker compose'
 # elixir
-abbr md='mix deps.get'
-abbr mt='mix test'
+abbr mxd='mix deps.get'
+abbr mxt='mix test'
 # git
 abbr g='git'
 abbr ga='git add'

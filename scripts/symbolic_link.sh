@@ -22,4 +22,4 @@ if [ ! -d "$HOME"/.config ]; then mkdir "$HOME"/.config; fi
 ln -sf "$dotfiles_dir"/starship/starship.toml "$HOME"/.config/starship.toml
 # nvim
 if [ ! -d "$HOME"/.config/nvim ]; then mkdir -p "$HOME"/.config/nvim; fi
-ln -sf "$dotfiles_dir"/nvim/init.vim "$HOME"/.config/nvim/init.vim
+ln -sf "$dotfiles_dir"/nvim/init.lua "$HOME"/.config/nvim/init.lua

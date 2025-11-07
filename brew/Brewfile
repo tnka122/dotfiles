@@ -1,6 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-
 brew "bat"
 brew "eza"
 brew "fzf"

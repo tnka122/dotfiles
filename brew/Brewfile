@@ -10,5 +10,10 @@ brew "sheldon"
 brew "starship"
 brew "tmux"
 
+# GUI Applications
 cask "iterm2"
 cask "raycast"
+
+# Fonts
+cask "font-udev-gothic-nf"
+cask "font-monaspace"

@@ -23,3 +23,6 @@ ln -sf "$dotfiles_dir"/starship/starship.toml "$HOME"/.config/starship.toml
 # nvim
 if [ ! -d "$HOME"/.config/nvim ]; then mkdir -p "$HOME"/.config/nvim; fi
 ln -sf "$dotfiles_dir"/nvim/init.lua "$HOME"/.config/nvim/init.lua
+# gitignore
+if [ ! -d "$HOME"/.config/git ]; then mkdir -p "$HOME"/.config/git; fi
+ln -sf "$dotfiles_dir"/git/ignore "$HOME"/.config/git/ignore

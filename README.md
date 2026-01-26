@@ -8,19 +8,19 @@ My personal configuration files for zsh, sheldon, starship, neovim, and more.
 
 1. Clone this repository
 
-    ```
+    ```shell
     git clone https://github.com/tnka122/dotfiles.git ~/dotfiles
     ```
 
 2. Run `make all`
 
-    ```
+    ```shell
     cd dotfiles
     make all
     ```
 
     `make all` creates `~/.zsh` directory as `$ZDOTDIR` and symbolic links to the configuration files in this `.zsh`.
-   
+
     See [`Makefile`](./Makefile) for more details.
 
 ## Note
@@ -32,7 +32,6 @@ My personal configuration files for zsh, sheldon, starship, neovim, and more.
 - These configuration files are designed to work on macOS. They may not work correctly on Linux or Windows.
 
 - After installation, the `$ZDOTDIR` will be set to `~/.zsh`.
-
 
 ## Update
 

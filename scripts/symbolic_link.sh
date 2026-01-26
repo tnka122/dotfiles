@@ -26,3 +26,6 @@ ln -sf "$dotfiles_dir"/nvim/init.lua "$HOME"/.config/nvim/init.lua
 # gitignore
 if [ ! -d "$HOME"/.config/git ]; then mkdir -p "$HOME"/.config/git; fi
 ln -sf "$dotfiles_dir"/git/ignore "$HOME"/.config/git/ignore
+# helix
+if [ ! -d "$HOME"/.config/helix ]; then mkdir -p "$HOME"/.config/helix; fi
+ln -sf "$dotfiles_dir"/helix/config.toml "$HOME"/.config/helix/config.toml

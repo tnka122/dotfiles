@@ -37,3 +37,5 @@ abbr lla='eza -la --icons'
 abbr vact='source ./.venv/bin/activate'
 # vim
 abbr v='nvim'
+# yazi
+abbr y='yazi'
